@@ -1,7 +1,15 @@
 //SetFactory("OpenCASCADE");
 
+
+
 a = 0.1;
 clcrack = a/5.0;
+
+// Inputs
+x1 = -a;
+y1 = -a;
+x2 =  a;
+y2 =  a;
 
 //clbig = clcrack;
 clbig = 0.5;
@@ -14,8 +22,8 @@ Point(4) = { 1, 1,0,clbig};
 Point(5) = {-1, 1,0,clbig};
 Point(6) = {-1, 0,0,clcrack};
 
-Point(7) = {-a, 0,0,clcrack};
-Point(8) = { a, a,0,clcrack};
+Point(7) = { x1, y1,0,clcrack};
+Point(8) = { x2, y2,0,clcrack};
 
 
 //  5<-------4
@@ -31,14 +39,15 @@ Line(4) = {4,5};
 Line(5) = {5,6};
 Line(6) = {6,1}; // closes the boundary
 
-Line(7) = {6,7}; // the crack starts here
-Line(8) = {7,8}; 
+// Line(7) = {6,7}; // the crack starts here
+// Line(8) = {7,8};
+Spline(7) = {6, 7, 8};
 Line(9) = {8,3}; // Not part of the crack, closes the bisection
 
 // For the mesher, the body is split in two,
 // but the crack is not like that
-Line Loop(1) = {6,1,2, -9,-8,-7};
-Line Loop(2) = {3,4,5,  7,8,9};
+Line Loop(1) = {6,1,2, -9,-7};
+Line Loop(2) = {3,4,5,  7,9};
 
 Plane Surface(1) = { 1 };
 Plane Surface(2) = { 2 };
@@ -57,3 +66,4 @@ Plugin(Crack).Run ;
 Physical Line(4) = { 10 };
 
 Save "crack2.msh";
+//+
