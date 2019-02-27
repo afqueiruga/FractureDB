@@ -53,7 +53,6 @@ def sim(x1,y1, x2,y2, clscale):
         'G':G,
         'x':mesh.coordinates(),
         'u':u.vector().get_local(),
-        'f':fracture_picture,
     }
     
 sim(0.1,0.1,0.2,0.3,1.0)
