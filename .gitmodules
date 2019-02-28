@@ -1,0 +1,3 @@
+[submodule "SimDataDB"]
+	path = oss/SimDataDB
+	url = https://github.com/afqueiruga/SimDataDB.git
