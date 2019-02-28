@@ -6,10 +6,10 @@ a = 0.1;
 clcrack = a/5.0;
 
 // Inputs
-x1 = -a;
-y1 = -a;
-x2 =  a;
-y2 =  a;
+//x1 = -a;
+//y1 = -a;
+//x2 =  5*a;
+//y2 =  a;
 
 //clbig = clcrack;
 clbig = 0.5;
