@@ -1,7 +1,9 @@
-# Frature database
+# FractureDB
 
-Alejandro Queiruga
-Lawrence Berkeley Lab
+An synthetic dataset for analysis of fracturing.
+
+Alejandro Queiruga  
+Lawrence Berkeley National Lab  
 2018
 
 ![fracture_pic.png](fracture_pic.png)
@@ -32,13 +34,13 @@ The following methods are used:
 2. Phase-field FEM (Need to merge it in)
 3. Peridynamics using [PeriFlakes](https://github.com/afqueiruga/PeriFlakes) (untrusted)
 
-The scripts are located in this repo.
+The scripts that generated the databases are located in this repo.
 
 - [crack_gen.geo](crack_gen.geo) A gmsh script to mesh a discrete fracture with command line parameters.
 - [fem_crack.py](fem_crack.py) Solve a fracture using FEniCS.
 - [setup_fenics.sh](setup_fenics.sh) Sets up software for the vanilla FEniCS docker image.
 
-As of this time, the setup is a pressurized fracture with the sides of the domain held clamped---imagine hydraulically fracturing a clamped laboratory sample.
+As of this time, the setup is a pressurized fracture with Dirichlet boundary conditions all around---imagine hydraulically fracturing a clamped laboratory sample. As of now only curved single fractures are considered. Branching will be explored soon, as will different boundary conditions.
 
 ## Database
 
@@ -62,7 +64,7 @@ The images have the following channels:
 4. float - K bulk modulus (Not yet; uniform K)
 5. float - G shear modulus (Not yet; uniform G)
 
-Example entires are in [look_at_results.ipynb](look_at_results.ipynb).
+Example entries and queries are in [look_at_results.ipynb](look_at_results.ipynb).
 
 The database is fed into a TensorFlow graph in [importing_in_tensorflow.ipynb](importing_in_tensorflow.ipynb) and used to train a naive model that "predicts" the strain energy from the fracture picture. 
 (It's not a very good model: it's just a test.)
