@@ -15,11 +15,11 @@ Modeling the propogation of fracture is an open problem. Generalizing to various
 The hope for this database is to analyze the fine-scale displacement
 and stress features around a fracture tip in a standard domain, and learn new
 predictive capabilities.
-
-There are smooth and rough fractures in homogenous and heterogenous media.
+There will be smooth and rough fractures in homogenous and heterogenous media.
 
 This repository contains the codes used to build the databse.
-The databases themselves are published at (TODO Zenodo? DoE db?)
+The databases themselves are included in the releases. (See above.)
+The databases are simple sqlite3 files, generated with [SimDataDB](https://github.com/afqueiruga/SimDataDB).
 
 Multiple simulation techniques can be used to generate the images.
 We don't particularly trust any of them, but we can compare them.
@@ -44,7 +44,6 @@ As of this time, the setup is a pressurized fracture with Dirichlet boundary con
 
 ## Database
 
-The databses can be found at LINK TODO.
 The database entries contain the following columns:
 
 1. method - the method used to calculate this entry
