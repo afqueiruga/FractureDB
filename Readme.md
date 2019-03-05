@@ -1,6 +1,6 @@
 # FractureDB
 
-An synthetic dataset for analysis of fracturing.
+A synthetic dataset for analysis of fracturing.
 
 Alejandro Queiruga  
 Lawrence Berkeley National Lab  
@@ -66,7 +66,7 @@ The images have the following channels:
 Example entries and queries are in [look_at_results.ipynb](look_at_results.ipynb).
 
 The database is fed into a TensorFlow graph in [importing_in_tensorflow.ipynb](importing_in_tensorflow.ipynb) and used to train a naive model that "predicts" the strain energy from the fracture picture. 
-(It's not a very good model: it's just a test.)
+(It's not a very good model: it's just a test of the workflow.)
 
 ## License
 
