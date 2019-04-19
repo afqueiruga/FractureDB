@@ -20,7 +20,7 @@ xs = np.linspace(-1,1,pixel_res)
 # for x in xs:
 #     for y in xs:
 #         pix_xy[i,:]=x,y
-sdb = SimDataDB('pix.db')
+sdb = SimDataDB('pix2.db')
 
 @sdb.Decorate('static',
              [('x1','float'),('y1','float'),('x2','float'),('y2','float'),('clscale','float')],
@@ -65,7 +65,7 @@ def sim(x1,y1, x2,y2, clscale):
     
 #     G_p = assemble( inner(tu,n*P)*ds(2) + inner(tu,n*P)*ds(4) )
 #     from IPython import embed ; embed()
-    
+    V = assemble(inner(u,n)*ds(2)+inner(u,n)*ds(3))
     pic = np.empty((pixel_res,pixel_res,3),dtype=np.float32)
     frac_pic = draw_fracture(x1,y1,x2,y2, (pixel_res,pixel_res))
     for i,x in enumerate(xs):
@@ -83,6 +83,7 @@ def sim(x1,y1, x2,y2, clscale):
     return {
         'W':W,
         'G_c':G_c,
+        'V':V,
         'pic':pic
 #         'x':mesh.coordinates(),
 #         'u':u.vector().get_local(),
