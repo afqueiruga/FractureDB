@@ -53,17 +53,21 @@ Plane Surface(1) = { 1 };
 Plane Surface(2) = { 2 };
 
 Physical Surface(1) = {1,2};
-Physical Line(2) = { 7,8 };
-Physical Line(3) = { 1,2,6,3,4,5 };
 
+Physical Line(2) = { 1 }; //bottom
+Physical Line(3) = { 2,3 }; //right
+Physical Line(4) = { 4 }; //top
+Physical Line(5) = { 5,6 }; //left
+
+Physical Line(6) = { 7,8 };
 Mesh 2;
 
 Plugin(Crack).Dimension = 1;
-Plugin(Crack).PhysicalGroup = 2;
+Plugin(Crack).PhysicalGroup = 6;
 Plugin(Crack).OpenBoundaryPhysicalGroup = 0;
 Plugin(Crack).Run ;
 
-Physical Line(4) = { 10 };
+Physical Line(7) = { 10 };
 
 Save "crack2.msh";
 //+
